@@ -6,7 +6,7 @@
 """
 
 import sys
-from .modules import PerformanceMonitor
+from modules import PerformanceMonitor
 
 def main():
     if len(sys.argv) < 2:

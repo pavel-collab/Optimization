@@ -5,7 +5,7 @@
 Создаёт графики для анализа CPU, памяти, диска, сети и прерываний
 """
 import sys
-from .modules import MetricsVisualizer
+from modules import MetricsVisualizer
 
 def main():
     data_dir = sys.argv[1] if len(sys.argv) > 1 else "monitoring_data"

@@ -5,7 +5,7 @@
 Анализирует собранные данные и выявляет проблемы
 """
 import sys
-from .modules import AnomalyDetector
+from modules import AnomalyDetector
 
 def main():
     data_dir = sys.argv[1] if len(sys.argv) > 1 else "monitoring_data"

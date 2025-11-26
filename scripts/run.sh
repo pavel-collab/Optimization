@@ -46,7 +46,7 @@ check_binary() {
     echo "Library dependencies:"
     ldd "$BINARY_PATH" || true
 
-    echo -e "${GREEN}✓ Binary is ready${NC}"
+    echo -e "${GREEN} Binary is ready${NC}"
 }
 
 # Запуск приложения
@@ -75,7 +75,7 @@ start_application() {
         exit 1
     fi
 
-    echo -e "${GREEN}✓ Application started${NC}"
+    echo -e "${GREEN} Application started${NC}"
 }
 
 # Запуск мониторинга

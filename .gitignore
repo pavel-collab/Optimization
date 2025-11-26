@@ -2,3 +2,6 @@ venv
 .vscode
 *.log
 performance_analysis*
+app_linux_amd64
+app_linux_arm64
+__pycache__

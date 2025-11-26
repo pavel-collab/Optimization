@@ -1,14 +1,7 @@
-#!/usr/bin/env python3
-
-"""
-Визуализация собранных метрик производительности
-Создаёт графики для анализа CPU, памяти, диска, сети и прерываний
-"""
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from pathlib import Path
-import sys
 
 sns.set_style("whitegrid")
 plt.rcParams['figure.figsize'] = (14, 8)
@@ -451,12 +444,3 @@ class MetricsVisualizer:
         self.plot_tcp_metrics()
         self.plot_interrupt_metrics()
         print(f"\nAll plots saved to: {self.output_dir}")
-
-def main():
-    data_dir = sys.argv[1] if len(sys.argv) > 1 else "monitoring_data"
-
-    visualizer = MetricsVisualizer(data_dir)
-    visualizer.create_all_plots()
-
-if __name__ == "__main__":
-    main()

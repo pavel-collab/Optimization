@@ -14,3 +14,10 @@ Linux raspberrypi 6.12.34+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.12.34-1+rpt1~book
 ```
 sudo apt install -y sysstat htop iotop procps linux-perf strace
 ```
+
+# Запуск скриптов
+
+Запуск/остановка приложения в фоновом режиме
+```
+./scripts/app start ./bin/app_linux_arm64 # stop -- чтобы остановить
+```

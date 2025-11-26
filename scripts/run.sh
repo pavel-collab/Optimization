@@ -82,14 +82,14 @@ start_application() {
 start_monitoring() {
     echo -e "${YELLOW}Starting performance monitoring...${NC}"
 
-    python3 perf_monitor.py $APP_PID "$OUTPUT_DIR/monitoring_data" $MONITORING_INTERVAL &
+    python3 ./src/monitoring.py $APP_PID "$OUTPUT_DIR/monitoring_data" $MONITORING_INTERVAL &
 
     MONITOR_PID=$!
 
     echo $MONITOR_PID > "$OUTPUT_DIR/monitor.pid"
 
     echo "Monitor PID: $MONITOR_PID"
-    echo -e "${GREEN}✓ Monitoring started${NC}"
+    echo -e "${GREEN} Monitoring started${NC}"
 }
 
 # Дополнительный детальный мониторинг
@@ -129,7 +129,7 @@ detailed_monitoring() {
     ) &
     SNAPSHOT_PID=$!
 
-    echo -e "${GREEN}✓ Detailed monitoring started${NC}"
+    echo -e "${GREEN} Detailed monitoring started${NC}"
 }
 
 # Генерация нагрузки
@@ -153,7 +153,7 @@ generate_load() {
         sleep $TEST_DURATION
     fi
 
-    echo -e "${GREEN}✓ Load generation completed${NC}"
+    echo -e "${GREEN} Load generation completed${NC}"
 }
 
 # Остановка всех процессов
@@ -188,7 +188,7 @@ generate_report() {
     echo -e "${YELLOW}Generating analysis report...${NC}"
 
     # Визуализация метрик
-    python3 visualizer.py "$OUTPUT_DIR/monitoring_data"
+    python3 ./src/visualize.py "$OUTPUT_DIR/monitoring_data"
 
     # Генерация текстового отчёта
     cat > "$OUTPUT_DIR/REPORT.md" << EOF
@@ -241,7 +241,13 @@ All raw metrics are available in CSV format in the \`monitoring_data\` directory
 - Strace summary: strace_summary.txt
 EOF
 
-    echo -e "${GREEN}✓ Report generated: $OUTPUT_DIR/REPORT.md${NC}"
+    echo -e "${GREEN} Report generated: $OUTPUT_DIR/REPORT.md${NC}"
+
+    echo -e "${YELLOW} Generate json anomaly report...${NC}"
+
+    python3 ./src/detecting.py "$OUTPUT_DIR/monitoring_data"
+
+    echo -e "${GREEN} Json anomaly report generated${NC}"
 }
 
 # Trap для cleanup при прерывании

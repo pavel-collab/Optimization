@@ -1,13 +1,5 @@
-#!/usr/bin/env python3
-
-"""
-Автоматический детектор аномалий в метриках производительности
-Анализирует собранные данные и выявляет проблемы
-"""
 import pandas as pd
-import numpy as np
 from pathlib import Path
-import sys
 import json
 
 class AnomalyDetector:
@@ -445,12 +437,3 @@ class AnomalyDetector:
         self.detect_tcp_anomalies()
         self.detect_interrupt_anomalies()
         self.generate_summary()
-
-def main():
-    data_dir = sys.argv[1] if len(sys.argv) > 1 else "monitoring_data"
-
-    detector = AnomalyDetector(data_dir)
-    detector.run_detection()
-
-if __name__ == "__main__":
-    main()

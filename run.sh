@@ -145,7 +145,7 @@ generate_load() {
             curl -s http://localhost:8080/ > /dev/null 2>&1 || true
             curl -s http://localhost:8080/api/data > /dev/null 2>&1 || true
             sleep 1
-        done &
+        done
 
     else
         echo "Running application in stress mode..."
@@ -188,7 +188,7 @@ generate_report() {
     echo -e "${YELLOW}Generating analysis report...${NC}"
 
     # Визуализация метрик
-    python3 visualize_metrics.py "$OUTPUT_DIR/monitoring_data"
+    python3 visualizer.py "$OUTPUT_DIR/monitoring_data"
 
     # Генерация текстового отчёта
     cat > "$OUTPUT_DIR/REPORT.md" << EOF

@@ -1,4 +1,4 @@
 venv
 .vscode
-bin
-mystery_app.log
+*.log
+performance_analysis*

@@ -1,0 +1,36 @@
+H/W path    Device          Class          Description
+======================================================
+                            system         Raspberry Pi 4 Model B Rev 1.4
+/0                          bus            Motherboard
+/0/1                        processor      cpu
+/0/1/0                      memory         32KiB L1 Cache
+/0/2                        processor      cpu
+/0/2/0                      memory         32KiB L1 Cache
+/0/3                        processor      cpu
+/0/3/0                      memory         32KiB L1 Cache
+/0/4                        processor      cpu
+/0/4/0                      memory         32KiB L1 Cache
+/0/5                        processor      l2-cache0
+/0/6                        memory         7820MiB System memory
+/0/0                        bridge         BCM2711 PCIe Bridge
+/0/0/0                      bus            VL805/806 xHCI USB 3.0 Controller
+/0/0/0/0    usb1            bus            xHCI Host Controller
+/0/0/0/0/1                  bus            USB2.0 Hub
+/0/0/0/1    usb2            bus            xHCI Host Controller
+/1          mmc0            bus            MMC Host
+/1/59b4     /dev/mmcblk0    disk           30GB USDU1
+/1/59b4/1   /dev/mmcblk0p1  volume         512MiB Windows FAT volume
+/1/59b4/2   /dev/mmcblk0p2  volume         27GiB EXT4 volume
+/2          mmc1            bus            MMC Host
+/2/1                        generic        SDIO Device
+/2/1/1      mmc1:0001:1     network        43430
+/2/1/2      mmc1:0001:2     generic        43430
+/2/1/3      mmc1:0001:3     communication  43430
+/3          card0           multimedia     Headphones
+/4          card1           multimedia     vc4hdmi0
+/5          card2           multimedia     vc4hdmi1
+/6          input0          input          vc4-hdmi-0
+/7          input1          input          vc4-hdmi-0 HDMI Jack
+/8          input2          input          vc4-hdmi-1
+/9          input3          input          vc4-hdmi-1 HDMI Jack
+/a          eth0            network        Ethernet interface

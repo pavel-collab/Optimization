@@ -27,3 +27,27 @@ sudo apt install -y sysstat htop iotop procps linux-perf strace
 ```
 ./scripts/app start ./bin/app_linux_arm64 # stop -- чтобы остановить
 ```
+
+# Запуск анализатора
+
+```
+python3 ./src/monitoring <app pid>
+```
+
+# Визуализация результатов
+
+```
+python3 ./src/visualize.py
+```
+
+# Анализ результатов
+
+```
+python3 ./src/detecting.py
+```
+
+# Автоматический запуск скрипта для анализа приложения
+
+```
+./scripts/run.sh 1 300
+```
